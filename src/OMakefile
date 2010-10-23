@@ -1,0 +1,12 @@
+FILE=\
+    sample.erl
+
+PROGRAM=\
+    sample
+
+.DEFAULT:  
+    $(ERLC) $(FILE)
+    $(ERL) -noshell -s $(PROGRAM) test -s init stop
+
+clean:
+    rm -f $(filter-proper-targets $(ls R, .))
